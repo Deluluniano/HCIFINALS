@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PrimeFit</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">PrimeFit</a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+                <li class="nav-item"><a class="nav-link" href="cart.html">Cart</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="home.html">PrimeFit</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item"><button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cartModal">Cart</button></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+<<div class="modal-dialog modal-dialog-scrollable modal-fullscreen-sm-down modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="cartModalLabel">Your Cart</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body" id="modal-cart-items">
+        <p>Loading cart...</p>
+      </div>
+      <div class="modal-footer">
+        <h5>Total: ₱<span id="modal-total-price">0.00</span></h5>
+        <a href="checkout.html" class="btn btn-success">Proceed to Checkout</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="container mt-5 pt-5">
+        <h1>Welcome to PrimeFit!</h1>
+        <p>Browse our products and enjoy your shopping.</p>
+    </div>
+<script>
+function renderCartModal() {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const cartContainer = document.getElementById("modal-cart-items");
+    const totalDisplay = document.getElementById("modal-total-price");
+    cartContainer.innerHTML = "";
+    let total = 0;
+
+    if (cart.length === 0) {
+        cartContainer.innerHTML = "<p>Your cart is empty.</p>";
+    } else {
+        cart.forEach(item => {
+            if (item && item.name && item.price && item.qty) {
+                const div = document.createElement("div");
+                div.className = "mb-2 border-bottom pb-2";
+                div.innerHTML = `<strong>${item.name}</strong> - ₱${item.price} x ${item.qty}`;
+                cartContainer.appendChild(div);
+                total += item.price * item.qty;
+            }
+        });
+    }
+
+    totalDisplay.textContent = total.toFixed(2);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    const cartBtn = document.querySelector('[data-bs-target="#cartModal"]');
+    if (cartBtn) {
+        cartBtn.addEventListener("click", renderCartModal);
+    }
+});
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+function renderCartModal() {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const cartContainer = document.getElementById("modal-cart-items");
+    const totalDisplay = document.getElementById("modal-total-price");
+    cartContainer.innerHTML = "";
+    let total = 0;
+
+    if (cart.length === 0) {
+        cartContainer.innerHTML = "<p>Your cart is empty.</p>";
+    } else {
+        cart.forEach(item => {
+            if (item && item.name && item.price && item.qty) {
+                const div = document.createElement("div");
+                div.className = "mb-2 border-bottom pb-2";
+                div.innerHTML = `<strong>${item.name}</strong> - ₱${item.price} x ${item.qty}`;
+                cartContainer.appendChild(div);
+                total += item.price * item.qty;
+            }
+        });
+    }
+
+    totalDisplay.textContent = total.toFixed(2);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    const cartBtn = document.querySelector('[data-bs-target="#cartModal"]');
+    if (cartBtn) {
+        cartBtn.addEventListener("click", renderCartModal);
+    }
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const confirmBtn = document.getElementById("confirmCheckout");
+    if (confirmBtn) {
+        confirmBtn.addEventListener("click", function() {
+            localStorage.removeItem("cart");
+            alert("Checkout completed! Cart has been reset.");
+            window.location.href = "home.html";
+        });
+    }
+});
+</script>
+
+</body>
+</html>

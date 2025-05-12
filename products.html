@@ -1,0 +1,188 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Products - PrimeFit</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f7f9fc;
+    }
+    .product-card {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      transition: transform 0.2s ease;
+      background: white;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+    .product-card:hover {
+      transform: scale(1.02);
+    }
+    .product-img {
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px 10px 0 0;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="home.html">PrimeFit</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item"><button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cartModal">Cart</button></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <div class="container py-5">
+    <h2 class="text-center mb-5 pt-3 text-primary">Our Products</h2>
+    <div class="row g-4">
+
+      <div class="col-12 col-sm-6 col-md-4">
+        <div class="product-card p-3">
+          <img src="Whey.jpg" class="w-100 product-img" alt="Whey">
+          <h5 class="mt-3">Whey Protein</h5>
+          <p>₱2,299.00</p>
+          <button class="btn btn-outline-primary w-100 add-to-cart" data-name="Whey Protein" data-price="2299.00">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-4">
+        <div class="product-card p-3">
+          <img src="Combat.jpg" class="w-100 product-img" alt="Hyrox">
+          <h5 class="mt-3">Combat Protein Powder</h5>
+          <p>₱4,470.00</p>
+          <button class="btn btn-outline-primary w-100 add-to-cart" data-name="Combat Protein Powder" data-price="4470.00">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-4">
+        <div class="product-card p-3">
+          <img src="Crea.jpg" class="w-100 product-img" alt="Creatine">
+          <h5 class="mt-3">Creatine Powder</h5>
+          <p>₱2,200.00</p>
+          <button class="btn btn-outline-primary w-100 add-to-cart" data-name="Creatine Powder" data-price="2200.00">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-4">
+        <div class="product-card p-3">
+          <img src="Bands.jpg" class="w-100 product-img" alt="Bands">
+          <h5 class="mt-3">Resistance Bands</h5>
+          <p>₱700.00</p>
+          <button class="btn btn-outline-primary w-100 add-to-cart" data-name="Resistance Bands" data-price="700.00">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-4">
+        <div class="product-card p-3">
+          <img src="Straps.jpg" class="w-100 product-img" alt="Straps">
+          <h5 class="mt-3">Straps</h5>
+          <p>₱599.00</p>
+          <button class="btn btn-outline-primary w-100 add-to-cart" data-name="Straps" data-price="599.00">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-4">
+        <div class="product-card p-3">
+          <img src="WristBands.jpg" class="w-100 product-img" alt="WristBands">
+          <h5 class="mt-3">Wrist Bands</h5>
+          <p>₱495.00</p>
+          <button class="btn btn-outline-primary w-100 add-to-cart" data-name="Wrist Bands" data-price="495.00">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-4">
+        <div class="product-card p-3">
+          <img src="Bar.jpg" class="w-100 product-img" alt="ProteinBar">
+          <h5 class="mt-3">Protein Bar Pack</h5>
+          <p>₱189.00</p>
+          <button class="btn btn-outline-primary w-100 add-to-cart" data-name="Protein Bar Pack" data-price="189.00">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-4">
+        <div class="product-card p-3">
+          <img src="Amino.jpg" class="w-100 product-img" alt="Backpack">
+          <h5 class="mt-3">Amino Tabs</h5>
+          <p>₱2,249.00</p>
+          <button class="btn btn-outline-primary w-100 add-to-cart" data-name="Amino Tabs" data-price="2249.00">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-4">
+        <div class="product-card p-3">
+          <img src="Energy.jpg" class="w-100 product-img" alt="Backpack">
+          <h5 class="mt-3">Energy Drink</h5>
+          <p>₱50.00</p>
+          <button class="btn btn-outline-primary w-100 add-to-cart" data-name="Energy Drink" data-price="50.00">Add to Cart</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+<div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-fullscreen-sm-down modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="cartModalLabel">Your Cart</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body" id="modal-cart-items">
+        <p>Loading cart...</p>
+      </div>
+      <div class="modal-footer">
+        <h5>Total: ₱<span id="modal-total-price">0.00</span></h5>
+        <a href="checkout.html" class="btn btn-success">Proceed to Checkout</a>
+      </div>
+    </div>
+  </div>
+<script>
+function renderCartModal() {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const cartContainer = document.getElementById("modal-cart-items");
+    const totalDisplay = document.getElementById("modal-total-price");
+    cartContainer.innerHTML = "";
+    let total = 0;
+
+    if (cart.length === 0) {
+        cartContainer.innerHTML = "<p>Your cart is empty.</p>";
+    } else {
+        cart.forEach(item => {
+            if (item && item.name && item.price && item.qty) {
+                const div = document.createElement("div");
+                div.className = "mb-2 border-bottom pb-2";
+                div.innerHTML = `<strong>${item.name}</strong> - ₱${item.price} x ${item.qty}`;
+                cartContainer.appendChild(div);
+                total += item.price * item.qty;
+            }
+        });
+    }
+
+    totalDisplay.textContent = total.toFixed(2);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    const cartBtn = document.querySelector('[data-bs-target="#cartModal"]');
+    if (cartBtn) {
+        cartBtn.addEventListener("click", renderCartModal);
+    }
+});
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

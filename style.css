@@ -1,0 +1,14 @@
+
+body {
+    padding-top: 60px;
+    background-color: #f8f9fa;
+}
+.card {
+    border-radius: 1rem;
+}
+.cart-section {
+    margin-top: 100px; 
+}
+.contact-section {
+    margin-top: 100px;
+}
